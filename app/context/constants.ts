@@ -1,13 +1,13 @@
 export interface myProductsFromDatabaseProps {
-    id: string,
-    title: string,
-    price: string,
-    category : string[],
-    colors: string[],
-    desc: string,
-    images: string[],
-    isNew: boolean,
-    rating: number,
+      id: string,
+      title: string,
+      price: string,
+      category : string[],
+      colors: string[],
+      desc: string,
+      images: string[],
+      isNew: boolean,
+      rating: number,
 }
 
 export interface myProductsFromDatabasePeopsWithId {

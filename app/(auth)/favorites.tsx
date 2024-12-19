@@ -119,7 +119,6 @@ const Favorites = () => {
       container: {
         flex: 1,
         backgroundColor: 'white',
-        paddingTop: 40,
         paddingBottom: 60,
       },
      

@@ -161,7 +161,7 @@ import AwesomeAlert from 'react-native-awesome-alerts';
     container: {
       flex: 1,
       backgroundColor: 'white',
-      paddingTop: 40,
+      
       paddingBottom: 60,
     },
    

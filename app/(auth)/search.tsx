@@ -39,8 +39,8 @@ useEffect(() => {
 
 const getLatestItemsS = async() => {
   setLatestItemLists([]);
-  const querySnapshots = await getDocs(collection(db, 'ProductDataTest'));
-  // const querySnapshots = await getDocs(collection(db, 'FurnitureData'));
+  // const querySnapshots = await getDocs(collection(db, 'ProductDataTest'));
+   const querySnapshots = await getDocs(collection(db, 'FurnitureData'));
   querySnapshots.forEach((doc) => {
     doc.data().values.id = doc.id; 
     const productWithId =  doc.data()
@@ -54,8 +54,8 @@ const getLatestItems = async() => {
   // Adjust based on your needs
   setLatestItemLists([]);
  
-  // const q = query(collection(db, 'FurnitureData'), limit(pageSize));
-   const q = query(collection(db, 'ProductDataTest'), limit(pageSize));
+   const q = query(collection(db, 'FurnitureData'), limit(pageSize));
+  //  const q = query(collection(db, 'ProductDataTest'), limit(pageSize));
   const querySnapshot = await getDocs(q);
 
   querySnapshot.forEach((doc) => {
@@ -184,7 +184,6 @@ refreshing ? <ActivityIndicator /> :
       container: {
         flex: 1,
         backgroundColor: 'white',
-        paddingTop: 40,
         paddingBottom: 60,
       },
      

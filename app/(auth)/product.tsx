@@ -160,7 +160,7 @@ type item = string
     container: {
       flex: 1,
       backgroundColor: 'white',
-      paddingTop: 40,
+      
       paddingBottom: 60,
     },
     image: {

@@ -13,9 +13,9 @@ interface AuthProps {
     carts?: myProductsFromDatabasePeopsWithId[],
     onAddToCart?: (item: myProductsFromDatabasePeopsWithId) => Promise<void | any>;
     deleteFromCart?: (item: myProductsFromDatabasePeopsWithId) => Promise<void | any>;
-    handleLiked?:  (item: myProductsFromDatabaseProps) => Promise<void | any>;
+    handleLiked?:  (item: myProductsFromDatabasePeopsWithId) => Promise<void | any>;
     refreshCart?: () => Promise<void | any>;
-    likedProducts?: myProductsFromDatabaseProps[];
+    likedProducts?: myProductsFromDatabasePeopsWithId[];
 }
 
 //const TOKEN_KEY = 'my-jwt';
@@ -30,7 +30,7 @@ export const AuthProvider = ({children}: any)=>{
 
     const [carts, setCarts] = useState<myProductsFromDatabasePeopsWithId[]>([])
     const [totalPrice, setTotalPrice] = useState(0);
-    const [likedProducts, setLikedProducts] = useState<myProductsFromDatabaseProps[]>([])
+    const [likedProducts, setLikedProducts] = useState<myProductsFromDatabasePeopsWithId[]>([])
 
     useEffect(() => {
        
@@ -59,7 +59,7 @@ export const AuthProvider = ({children}: any)=>{
       //  const totalSum ()=  carts.reduce((ammount, item) => ammount+ item.price , 0);
     }
 
-    const handleLiked = async (items: myProductsFromDatabaseProps) => { 
+    const handleLiked = async (items: myProductsFromDatabasePeopsWithId) => { 
          
          const isLiked = likedProducts.some((liked) => liked.id === items.id);
          

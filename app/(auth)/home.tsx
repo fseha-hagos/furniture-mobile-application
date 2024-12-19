@@ -231,6 +231,7 @@ const next = db.collection('cities')
         const getLatestItems = async() => {
             // Adjust based on your needs
             const q = query(collection(db, 'FurnitureData'), limit(pageSize));
+            // const q = query(collection(db, 'ProductDataTest'), limit(pageSize));
             const querySnapshot = await getDocs(q);
 
             setRefreshing(true);
@@ -238,10 +239,12 @@ const next = db.collection('cities')
 
             querySnapshot.forEach((doc) => {
             doc.data().values.id = doc.id;
+            // console.log("latestItemList",doc.data() )
             const productWithId = doc.data();
             productWithId.values.id = doc.id;
             setLatestItemLists(latestItemLists => [...latestItemLists, productWithId]);
             });
+            console.log("latestItemLists", latestItemLists )
             
             setPreviosStart(querySnapshot.docs[(querySnapshot.docs.length - 1)-querySnapshot.docs.length]);
             setStartingDoc(querySnapshot.docs[querySnapshot.docs.length - 1]);
@@ -368,6 +371,7 @@ const next = db.collection('cities')
             }
             data={latestItemLists} 
             renderItem={({item ,index}) => (
+              // <Text>Product list</Text>
                  <ProductCards 
                     item={item.values}
                     key={index}

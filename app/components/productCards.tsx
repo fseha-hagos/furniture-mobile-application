@@ -36,17 +36,17 @@ interface productType {
 
 
 interface props {
-    item : myProductsFromDatabaseProps,
+    item : myProductsFromDatabasePeopsWithId,
    // handleLiked: (items: myProductsFromDatabasePeopsWithId)=> void;
     
     //handleLiked: (items: {id: number,name: string, price: number, image: number, color: string, isNew: boolean, isLiked: boolean, rating: number, colors: string[], description: string})=> void;
 }
   interface ProductStackParamList {
-    Product: { item: myProductsFromDatabaseProps }; // Assuming Product is defined elsewhere
+    Product: { item: myProductsFromDatabasePeopsWithId }; // Assuming Product is defined elsewhere
   }
 
 const ProductCards = ({ item }: props) => {
-    const navigation = useNavigation<NavigationProp<ProductStackParamList>>();
+    const navigation = useNavigation<NavigationProp<myProductsFromDatabasePeopsWithId>>();
     const [isLiked, setIsLiked] = useState(false);
 
     const {handleLiked, likedProducts} = useAuth();
@@ -65,7 +65,7 @@ const ProductCards = ({ item }: props) => {
     return (
         
         <TouchableOpacity style={styles.container} onPress={() => navigation.navigate("Product", { item: item })}>
-            <Image source={{uri: item.images[0]}} style={styles.coverImage}/>
+            <Image source={{uri: item.image}} style={styles.coverImage}/>
             <View style={styles.content}>
 
             <Text style={styles.title}>{item.title}</Text>
