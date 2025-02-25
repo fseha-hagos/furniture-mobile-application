@@ -41,7 +41,7 @@ export const AuthProvider = ({children}: any)=>{
 
     const loadCartItems = async () => {
         let getCarts = await AsyncStorage.getItem("carts");
-         let savedCarts = getCarts ? JSON.parse(getCarts) : [];
+        let savedCarts = getCarts ? JSON.parse(getCarts) : [];
         setCarts(savedCarts)
         totalSum(savedCarts)
         console.log("getCarts : ",getCarts)
@@ -65,12 +65,12 @@ export const AuthProvider = ({children}: any)=>{
          
          if (isLiked) {
             const newItems = likedProducts.filter((liked) => liked.id !== items.id) ;
-            await AsyncStorage.setItem("liked-products", JSON.stringify(newItems));
             setLikedProducts(newItems);
+            await AsyncStorage.setItem("liked-products", JSON.stringify(newItems));
           } else {
             const dislike =  [...likedProducts, items]
-            await AsyncStorage.setItem("liked-products", JSON.stringify(dislike));
             setLikedProducts(dislike);
+            await AsyncStorage.setItem("liked-products", JSON.stringify(dislike));
           }      
           console.log("context liked products: ",likedProducts)
           return Promise.resolve();
@@ -94,16 +94,16 @@ export const AuthProvider = ({children}: any)=>{
             const updatedCarts = [...carts];
             updatedCarts[itemExists].totalPurchase = (item.totalPurchase); // Add 1 to quantity
             updatedCarts[itemExists].color = (item.color ); // Add 1 to quantity
-
-      await AsyncStorage.setItem("carts", JSON.stringify(updatedCarts));
-      setCarts(updatedCarts);
-      totalSum(updatedCarts);
+            setCarts(updatedCarts);
+            totalSum(updatedCarts);
+            await AsyncStorage.setItem("carts", JSON.stringify(updatedCarts));
+      
         }
        else{
         const newCarts = [...carts , item]
+        setCarts(newCarts);
+        totalSum(newCarts)
         await AsyncStorage.setItem("carts",JSON.stringify(newCarts))
-       setCarts(newCarts);
-       totalSum(newCarts)
        }
         
 console.log(" item--------- : ",item)

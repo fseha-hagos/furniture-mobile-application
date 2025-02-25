@@ -56,16 +56,16 @@ const Profile = () => {
      resizeMode="contain"
      />
     },
-    {
-      id : 5,
-      name: "Add Product",
-      path: "addProduct",
-      icon: <Image
-      source={require('./assets/images/shopping-bag.png')}
-      style={styles.shoppingBagIcon}
-     resizeMode="contain"
-     />
-    },
+    // {
+    //   id : 5,
+    //   name: "Add Product",
+    //   path: "addProduct",
+    //   icon: <Image
+    //   source={require('./assets/images/shopping-bag.png')}
+    //   style={styles.shoppingBagIcon}
+    //  resizeMode="contain"
+    //  />
+    // },
   ]
 
   const onSaveUser = async () => {
@@ -116,6 +116,10 @@ const Profile = () => {
     const linkk = 'https://t.me/+251962588731/'
       Linking.openURL(linkk)
   }
+  const handleSignOut = async () => {
+    await signOut();
+    console.log("You have signed out successfully.");
+  };
   return (
     <SafeAreaView style={styles.scrollContainer}>
       <Navbar title="Profile " showBack ={true} showSearch = {false}/>
@@ -138,6 +142,7 @@ const Profile = () => {
           <TouchableOpacity style={styles.contactIcons} onPress={tiktok}>
            <Image source={require("../assets/logo/google.png")} style={styles.icon}/>
           </TouchableOpacity>
+          
          
         </View>
       </View>
@@ -154,6 +159,12 @@ const Profile = () => {
               </View>
             ))  
           }
+              <View  style={styles.buttonContainer}>
+                  <TouchableOpacity style={styles.button} onPress={() =>handleSignOut()}>
+                    
+                     <Text style={styles.buttonText}>Logout</Text>
+                 </TouchableOpacity>
+              </View>
          </View>
          </View>
     </SafeAreaView>

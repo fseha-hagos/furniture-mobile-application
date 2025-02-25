@@ -19,9 +19,8 @@ const Layout = () => {
 
   
   return (
-    
     <AuthProvider>
-   <Navigations />
+      <Navigations />
     </AuthProvider>
     
   );
@@ -38,7 +37,6 @@ const Navigations = () => {
 return(
   <NavigationIndependentTree >
       <TabNavigator />
-      
   </NavigationIndependentTree>
 
 )

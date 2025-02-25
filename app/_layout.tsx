@@ -32,7 +32,7 @@ const InitialLayout = () => {
     if (isSignedIn && !inTabsGroup) {
       router.replace('/home');
     } else if (!isSignedIn) {
-      router.replace('/home');
+      router.replace('/login');
     }
   }, [isSignedIn]);
 
@@ -105,11 +105,9 @@ const RootLayout = () => {
   
 // </ImageBackground>
     <ClerkProvider publishableKey={CLERK_PUBLISHABLE_KEY!} tokenCache={tokenCache}>  
-    <InitialLayout />
-  </ClerkProvider>
+      <InitialLayout />
+    </ClerkProvider>
   );
-
- 
 };
 
 const styles = StyleSheet.create({

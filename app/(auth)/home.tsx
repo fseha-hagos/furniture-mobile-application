@@ -133,7 +133,6 @@ useEffect(() => {
 }
 ,[selectedCategory])
 
-
   const getSliders = async () => {
     setSliderList([]);
     const querySnapshots = await getDocs(collection(db, "Sliders"));
@@ -391,7 +390,7 @@ const next = db.collection('cities')
                   </TouchableOpacity>
                   
                 </View>
-                  <Offers />
+                  {/* <Offers /> */}
               </View>
    
             }
