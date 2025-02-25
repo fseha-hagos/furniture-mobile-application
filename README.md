@@ -1,6 +1,6 @@
 # 🛋️ Furniture E-Commerce Mobile App 🚀
 
-![My App](app/assets/images/chair1.png)
+
 <video src="app/assets/your-link-to-video.mp4" width="600" controls></video>
 
 Welcome to the **Furniture E-Commerce Mobile App** repository! This is a React Native-based mobile application designed to provide users with a seamless shopping experience for furniture products. The app integrates **Firebase** for real-time database management, **Chapa** for secure payment processing, and **Clerk** for user authentication. Whether you're a developer or a furniture enthusiast, this app has something for everyone!
