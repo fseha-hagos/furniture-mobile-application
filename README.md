@@ -2,8 +2,8 @@
 
 Welcome to the My App Project! This project is built using React Native and aims to provide a seamless user experience with a variety of interactive elements.
 
-![My App](app/assets/images/chair1.png)
-![My App](app/assets/images/chair1.png)
+![My App](app/assets/images/sofa.png)
+
 
 ## Project Overview
 My App is a mobile application designed to enhance user engagement through interactive features. It allows users to browse products, manage their cart, and make purchases seamlessly.
