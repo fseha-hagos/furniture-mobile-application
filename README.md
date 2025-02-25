@@ -1,6 +1,6 @@
 # 🛋️ Furniture E-Commerce Mobile App 🚀
 
-![My App](app/assets/images/chair1.png)
+![My App](app/assets/images/sofa.png)
 <video src="./app/assets/video_2025-02-25_22-49-57.mp4" width="600" controls></video>
 
 
